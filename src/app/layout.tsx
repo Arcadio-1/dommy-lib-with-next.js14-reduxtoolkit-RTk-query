@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/util/Navbar/Nav";
 import Nav_sub from "@/components/util/Navbar/Nav_sub";
+import MainProvider from "@/components/MainProvider";
 
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Nav />
-        <Nav_sub />
-        <main>{children}</main>
+        <MainProvider>
+          <Nav />
+          <Nav_sub />
+          <main>{children}</main>
+        </MainProvider>
       </body>
     </html>
   );

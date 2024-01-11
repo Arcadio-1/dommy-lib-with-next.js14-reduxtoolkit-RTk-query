@@ -1,4 +1,5 @@
 import React from "react";
+import { cn } from "@/lib/utils";
 
 import { SVGProps } from "react";
 
@@ -6,7 +7,11 @@ type Props = SVGProps<SVGSVGElement>;
 
 const My_books_icon = ({ className }: Props) => {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none">
+    <svg
+      className={cn(" h-5 w-5 fill-first", className)}
+      viewBox="0 0 24 24"
+      fill="none"
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"
