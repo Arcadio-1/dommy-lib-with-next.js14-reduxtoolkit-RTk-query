@@ -9,3 +9,8 @@ export interface Book {
   title: string;
   year: number;
 }
+export enum Paths {
+  home = "",
+  my_books = "myBooks",
+  book = "book",
+}

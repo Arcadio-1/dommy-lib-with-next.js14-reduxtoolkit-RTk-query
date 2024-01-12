@@ -1,9 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import logo_image from "@/assets/image/Logo.png";
+import Link from "next/link";
 const Logo = () => {
   return (
-    <div className="flex justify-center items-center w-full md:w-auto ">
+    <Link
+      href={"/"}
+      className="flex justify-center items-center w-full md:w-auto "
+    >
       <Image
         src={logo_image}
         alt={"dummy lib"}
@@ -11,7 +15,7 @@ const Logo = () => {
         width={200}
         height={20}
       />
-    </div>
+    </Link>
   );
 };
 

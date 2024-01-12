@@ -30,7 +30,7 @@ const BookCard = ({ book: { imageLink, title, id } }: Props) => {
           <Image
             src={`/${imageLink}`}
             alt={title}
-            className="w-full"
+            className=""
             width={130}
             height={100}
           />

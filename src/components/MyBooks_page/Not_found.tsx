@@ -8,7 +8,7 @@ const Not_found = () => {
   return (
     <div className=" flex flex-col justify-center items-center gap-6 w-full max-w-xl mx-auto p-8">
       <Image
-        className="animate-pulse"
+        className=""
         src={notfound_Svg}
         width={200}
         height={80}
