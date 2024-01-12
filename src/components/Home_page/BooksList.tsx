@@ -1,9 +1,12 @@
 "use client";
-import { useFetchAllBooksQuery } from "@/lib/store/features/books_api/books-api-slice";
+import {
+  allFilterdBooks,
+  useFetchAllBooksQuery,
+} from "@/lib/store/features/books_api/books-api-slice";
 import React from "react";
 import BookCard from "./BookCard/BookCard";
 import { useSelector } from "react-redux";
-import { selectedBooks } from "@/lib/store/store";
+import { selectedBooks } from "@/lib/store/features/list/list-slice";
 import Not_found from "../MyBooks_page/Not_found";
 import List from "../ui/List";
 import List_skeleton_loading from "../ui/List_skeleton_loading";
@@ -13,8 +16,9 @@ interface Props {
 }
 
 const BooksList = ({ myBooks }: Props) => {
-  const { data: books = [], isLoading } = useFetchAllBooksQuery();
+  const { isLoading } = useFetchAllBooksQuery();
   const selected = useSelector(selectedBooks);
+  const allselected = useSelector(allFilterdBooks);
   return (
     <>
       {isLoading ? (
@@ -23,7 +27,7 @@ const BooksList = ({ myBooks }: Props) => {
         <>
           {!myBooks && (
             <List>
-              {books.map((book) => {
+              {allselected.map((book) => {
                 return <BookCard key={book.id} book={book} />;
               })}
             </List>

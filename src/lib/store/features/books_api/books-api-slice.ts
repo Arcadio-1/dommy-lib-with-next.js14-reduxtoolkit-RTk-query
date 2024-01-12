@@ -1,5 +1,7 @@
 import { Book } from "@/types/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { RootState } from "../../store";
+import { createSelector } from "@reduxjs/toolkit";
 
 export const apiSliceAllbooks = createApi({
   reducerPath: "api",
@@ -26,3 +28,13 @@ export const apiSliceAllbooks = createApi({
 });
 
 export const { useFetchAllBooksQuery, useFetchBookQuery } = apiSliceAllbooks;
+
+export const allFilterdBooks = createSelector(
+  (state: RootState) =>
+    apiSliceAllbooks.endpoints.fetchAllBooks.select(undefined)(state)?.data,
+  (state: RootState) => state.search,
+  (books, search) =>
+    (books || []).filter((books) =>
+      books.title.toLowerCase().includes(search.search.toLowerCase())
+    )
+);
