@@ -11,7 +11,7 @@ const Nav_sub = () => {
   const { currentPath } = useCurrentPath();
 
   return (
-    <aside className="fixed flex z-50 bottom-0 right-0 items-center justify-center gap-2 px-2 w-full rounded-t-xl bg-bg_2 md:hidden border-t-first border-t-[1px]">
+    <aside className="fixed flex z-50 bottom-0 right-0 items-center justify-center gap-2 px-2 w-full rounded-t-xl bg-bg_2 bg-opacity-60 backdrop-blur-sm md:hidden border-t-first border-t-[1px]">
       <Link className="w-full" href={"/"}>
         <Button
           selected={currentPath === Paths.home}

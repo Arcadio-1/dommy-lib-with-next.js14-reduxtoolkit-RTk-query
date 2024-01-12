@@ -23,7 +23,7 @@ export default function RootLayout({
         <MainProvider>
           <Nav />
           <Nav_sub />
-          <main>{children}</main>
+          <main className="pb-20">{children}</main>
         </MainProvider>
       </body>
     </html>

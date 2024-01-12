@@ -1,6 +1,4 @@
 import Book from "@/components/Book_page/Book";
-import Button from "@/components/ui/Button";
-import Link from "next/link";
 import React from "react";
 
 interface Props {
@@ -10,12 +8,9 @@ interface Props {
 }
 const page = ({ params: { book_id } }: Props) => {
   return (
-    <div>
-      <Link href={"/"}>
-        <Button>back</Button>
-      </Link>
+    <section className="flex items-center justify-center mt-5">
       <Book id={book_id} />
-    </div>
+    </section>
   );
 };
 

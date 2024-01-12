@@ -14,13 +14,14 @@ const Search_input = () => {
         <Search_icon className="h-5 w-5 opacity-65 fill-first_text_color" />
       </label>
       <input
+        placeholder="Enter Title..."
         onChange={(event) => {
           dispatch(setSearch(event.target.value));
         }}
         value={search}
         id="search_input"
         type="text"
-        className="bg-bg_1 w-full px-10 md:leading-9 leading-8 focus:outline-none focus:border-first focus:ring-1 focus:ring-first rounded-lg "
+        className="bg-bg_1 w-full px-10 md:leading-9 leading-8 focus:outline-none focus:border-first focus:ring-1 focus:ring-first rounded-lg text-first_text_color"
       />
       {search && (
         <Button
