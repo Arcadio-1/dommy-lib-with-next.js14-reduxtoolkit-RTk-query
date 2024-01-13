@@ -6,7 +6,7 @@ interface Props {
     book_id: string;
   };
 }
-const page = ({ params: { book_id } }: Props) => {
+const Bookpage = ({ params: { book_id } }: Props) => {
   return (
     <section className="flex items-center justify-center mt-5">
       <Book id={book_id} />
@@ -14,4 +14,4 @@ const page = ({ params: { book_id } }: Props) => {
   );
 };
 
-export default page;
+export default Bookpage;

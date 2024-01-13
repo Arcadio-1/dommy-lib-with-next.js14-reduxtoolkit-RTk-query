@@ -58,22 +58,21 @@ const BookCard = ({
           ) : (
             <h2 className="text-xl text-center">{title}</h2>
           )}
-          {!list.includes(id) && (
-            <Button
-              onClick={addHandler}
-              className="w-full flex items-center justify-center text-xl"
-            >
-              <Plus_icon />
-              Add
-            </Button>
-          )}
-          {list.includes(id) && (
+          {list.includes(id) ? (
             <Button
               onClick={removeHandler}
               className="w-full flex items-center justify-center text-xl"
             >
               <Close_icon />
               Remove
+            </Button>
+          ) : (
+            <Button
+              onClick={addHandler}
+              className="w-full flex items-center justify-center text-xl"
+            >
+              <Plus_icon />
+              Add
             </Button>
           )}
           {children}

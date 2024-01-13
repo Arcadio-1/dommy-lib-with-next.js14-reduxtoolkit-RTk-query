@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
 const useCurrentPath = () => {
-  const [currentPath, setCurrentPath] = useState<Paths>(Paths.home);
+  const [currentPath, setCurrentPath] = useState<Paths | null>(null);
   const path = usePathname();
 
   const mainPath = useMemo(() => {
@@ -20,7 +20,7 @@ const useCurrentPath = () => {
         case Paths.book:
           return Paths.book;
         default:
-          return Paths.home;
+          return null;
       }
     });
   }, [mainPath]);

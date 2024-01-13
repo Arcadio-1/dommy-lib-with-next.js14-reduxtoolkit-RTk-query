@@ -9,7 +9,7 @@ import React from "react";
 const Navigation = () => {
   const { currentPath } = useCurrentPath();
   return (
-    <ul className="md:flex items-center justify-center gap-2 hidden ">
+    <ul className="hidden md:flex items-center justify-center gap-2">
       <li>
         <Link href={"/"}>
           <Button selected={currentPath === Paths.home} className="group">

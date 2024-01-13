@@ -1,6 +1,6 @@
 "use client";
 import { useFetchBookQuery } from "@/lib/store/features/books_api/books-api-slice";
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import Not_found from "@/components/util/Not_found";
@@ -13,15 +13,14 @@ interface IBook {
 }
 
 const Book = ({ id }: IBook) => {
-  const { data: book, isLoading } = useFetchBookQuery(id);
-
+  const { data: book, isLoading, isSuccess } = useFetchBookQuery(id);
   return (
     <div className="w-full flex justify-center">
       {isLoading ? (
-        <p>loading</p>
+        <h1 className="text-lg text-first_text_color">Loading</h1>
       ) : (
         <>
-          {book ? (
+          {isSuccess ? (
             <BookCard
               className="max-w-80 grow"
               book={book}
